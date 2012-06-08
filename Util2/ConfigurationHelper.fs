@@ -11,10 +11,10 @@ open System.Text
 module ConfigurationHelperModule =
     let GetMapInfo (path:string) =
         let root=XElement.Load(path)
-        root.Element("Mappings").Descendants()
+        root.Element(UtilModule.xn "Mappings").Descendants()
         |>Seq.map (fun m -> 
             match m.Descendants()|>Seq.isEmpty with
-            |true ->(UtilModule.getAttr(m,"key"),UtilModule.getAttr(m,"value"),(null,null,null))
+            |true ->(UtilModule.getAttr m "key" ,UtilModule.getAttr m "value",(null,null,null))
             |false -> 
                 let info=m.Descendants()|>Seq.map (fun mm ->
                     let sectionName= UtilModule.getAttr mm "name"
@@ -23,4 +23,5 @@ module ConfigurationHelperModule =
                     let attrs=UtilModule.getAttr node "attrs"
                     (sectionName,node,nodeName,attrs)
                     )
+                (UtilModule.getAttr m "key" ,UtilModule.getAttr m "value",info)
             )
