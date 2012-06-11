@@ -55,7 +55,6 @@
     <Compile Include="StringExtension.fs" />
     <Compile Include="Cryption.fs" />
     <Compile Include="Validator.fs" />
-    <None Include="Script.fsx" />
     <Compile Include="Model.fs" />
     <Compile Include="FileModule.fs" />
     <Compile Include="XmlProccessor.fs" />
@@ -66,6 +65,8 @@
     <Compile Include="UIElement.fs" />
     <Compile Include="ErrorService.fs" />
     <Compile Include="ConfigurationHelper.fs" />
+    <None Include="Script.fsx" />
+    <Compile Include="GetOriginConfigContent.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />

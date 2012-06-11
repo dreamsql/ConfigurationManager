@@ -51,7 +51,19 @@ module UtilModule=
             match m.Attribute(xn attr) with
             |null ->""
             |x ->x.Value   
+    
 
+    let GetElement (element:XElement) (elementName:string) =
+        let target=element.Element(xn elementName)
+        match target with
+        |null -> element.Element(StringsModule.xmlns + elementName)
+        |_ ->target
+
+    let GetElements (element:XElement) (elementName:string) =
+        let target=element.Elements(xn elementName)
+        match target with
+        |null -> element.Elements(StringsModule.xmlns + elementName)
+        |_ ->target
 
 module ConfigModule =
 

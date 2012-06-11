@@ -5,3 +5,9 @@ D:\VsProjects\Util\Util2\obj\Debug\Util2.pdb
 D:\VsProjects\Util\Util2\bin\FSharp.Core.dll
 D:\VsProjects\Util\Util2\bin\FSharp.Core.xml
 D:\VsProjects\Util\Util2\obj\Debug\Util2.fsprojResolveAssemblyReference.cache
+D:\GitDataSource\ConfigurationManager\Util2\bin\Util2.dll
+D:\GitDataSource\ConfigurationManager\Util2\bin\Util2.pdb
+D:\GitDataSource\ConfigurationManager\Util2\bin\FSharp.Core.dll
+D:\GitDataSource\ConfigurationManager\Util2\bin\FSharp.Core.xml
+D:\GitDataSource\ConfigurationManager\Util2\obj\Debug\Util2.dll
+D:\GitDataSource\ConfigurationManager\Util2\obj\Debug\Util2.pdb
