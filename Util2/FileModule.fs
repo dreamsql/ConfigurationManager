@@ -10,6 +10,7 @@ open System.Text.RegularExpressions
 open System.Text
 
 module StringsModule =
+    let xmlNamespace="http://schemas.microsoft.com/.NetConfiguration/v2.0";
     let xmlns=XNamespace.Get "http://schemas.microsoft.com/.NetConfiguration/v2.0"
     let currentProgramName="ConfigurationManager";
     let connectionString="ConnectionString"
