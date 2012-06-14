@@ -46,7 +46,7 @@ module ApplyConfigModule =
                                     let attVal=UtilModule.getAttr elem x
                                     match attVal with
                                     |"" ->
-                                        let child=elem.Descendants().Single()
+                                        let child=elem.Descendants().First()
                                         child.SetAttributeValue((UtilModule.xn x),target.[x])
                                     |_ ->
                                         elem.SetAttributeValue((UtilModule.xn x),target.[x])

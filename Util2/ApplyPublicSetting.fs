@@ -65,8 +65,7 @@ module ApplyPublicSettingModule =
     let ApplyToOriginConfig (publicSettingInfo:seq<string*string*string[]*seq<System.Collections.Generic.Dictionary<string,string>>>) (path:string) =
         try
             let root=XElement.Load(path)
-            let xmlTable= root.CreateReader().NameTable
-            let xmlNamespaceManager=new XmlNamespaceManager(xmlTable)
+            let xmlNamespaceManager=new XmlNamespaceManager(new NameTable())
             do xmlNamespaceManager.AddNamespace("x",StringsModule.xmlNamespace)
             publicSettingInfo|>
             Seq.iter (fun (sectionName,nodeName,attrs,content) ->
@@ -88,7 +87,7 @@ module ApplyPublicSettingModule =
                     let target = existKeys.Any(fun x -> x = m.[attrs.[0]])
                     match target with
                     |false ->
-                        let targetElem=new XElement(UtilModule.xn nodeName)
+                        let targetElem=new XElement(StringsModule.xmlns +  nodeName)
                         parentElem.Add(targetElem)
                         attrs|>
                         Array.iter (fun attr ->

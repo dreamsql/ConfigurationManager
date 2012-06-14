@@ -19,7 +19,7 @@ module FetchOriginContentModule =
             let mutable nodes=root.XPathEvaluate(!xpath,xmlNamespaceManager) :?>seq<obj>
             match nodes|>Seq.isEmpty with
             |false -> ()
-            |true -> 
+            |true ->
                 xpath:=sprintf "/x:%s/x:%s" sectionParts nodeName
                 nodes <- root.XPathEvaluate(!xpath,xmlNamespaceManager) :?>seq<obj>
             let contents= nodes|>Seq.map (fun m ->
@@ -28,7 +28,7 @@ module FetchOriginContentModule =
                     let attr=UtilModule.getAttr elem a
                     match attr with
                     |"" ->
-                        let child=elem.Descendants().SingleOrDefault()
+                        let child=elem.Descendants().FirstOrDefault()
                         match child with
                         |null -> (a,"")
                         |_ ->
